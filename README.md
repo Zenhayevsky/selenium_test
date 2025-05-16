@@ -1,13 +1,13 @@
 🧰 Project Structure
 
 selenium_automation/
-├── main.py                # Entry point – runs all steps in sequence
+├── main.py                 # Entry point – runs all steps in sequence
 ├── config/
-│   └── settings.py          # Paths, constants, and settings
-├── scripts/
-│   └── connexion_hazmat.py          # Paths, constants, and settings
-├── README.md              # Project documentation
-├── requirements
+│   └── settings.py         # Paths, constants, and settings
+├── scripts/                # Scripts to run
+│   └── connexion_hazmat.py          
+├── README.md               # Project documentation
+├── requirements            # Project requirements
 
 🚀 How to Run
 Make sure you have Python 3 installed.

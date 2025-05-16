@@ -23,7 +23,7 @@ def main():
         run_script(driver)
         print("✅ Process completed.")
     except Exception as e:
-        print("❌ Erro:", e)
+        print("❌ Error:", e)
     finally:
         input("Press enter to close the browser...")
         driver.quit()
