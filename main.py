@@ -21,11 +21,11 @@ def main():
     driver = create_driver()
     try:
         run_script(driver)
-        print("✅ Processo completo.")
+        print("✅ Process completed.")
     except Exception as e:
         print("❌ Erro:", e)
     finally:
-        input("Pressione Enter para fechar o navegador...")
+        input("Press enter to close the browser...")
         driver.quit()
 
 if __name__ == "__main__":

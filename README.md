@@ -1,27 +1,21 @@
 🧰 Project Structure
-bash
-Copy
-Edit
+
 selenium_automation/
 ├── main.py                # Entry point – runs all steps in sequence
-├── login.py               # Handles browser setup and login to the system
-├── form_fill.py           # Handles form filling and intermediate steps
-├── file_upload.py         # Handles file upload and final confirmation
-├── utils/
-│   └── config.py          # Paths, constants, and settings
-├── assets/
-│   └── sample_file.png    # File used for upload (example)
+├── config/
+│   └── settings.py          # Paths, constants, and settings
+├── scripts/
+│   └── connexion_hazmat.py          # Paths, constants, and settings
 ├── README.md              # Project documentation
+├── requirements
+
 🚀 How to Run
 Make sure you have Python 3 installed.
 
 Install the required dependencies:
 
-bash
-Copy
-Edit
 pip install selenium webdriver-manager
-Place the file to upload in the assets/ folder and update the path in config.py.
+Place the image to uplodoad and update the path in settings.py.
 
 Run the main script:
 python main.py
