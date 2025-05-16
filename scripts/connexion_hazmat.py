@@ -47,7 +47,7 @@ def run_script(driver):
     # Fill in the fields
     WebDriverWait(driver, 10).until(
         EC.visibility_of_element_located((By.XPATH, "/html/body/form/table/tbody/tr/td[2]/table/tbody/tr[2]/td[2]/div/div[1]/div[2]/div[1]/table/tbody/tr[2]/td[2]/input"))
-    ).send_keys("C12")
+    ).send_keys("C16")
 
     WebDriverWait(driver, 10).until(
         EC.visibility_of_element_located((By.XPATH, "/html/body/form/table/tbody/tr/td[2]/table/tbody/tr[2]/td[2]/div/div[1]/div[2]/div[1]/table/tbody/tr[3]/td[2]/input[1]"))
@@ -71,18 +71,22 @@ def run_script(driver):
     time.sleep(3)
 
     # Click the "Télécharger" button
-    driver.find_element(By.XPATH, "/html/body/form/div[3]/table/tbody/tr/td[2]/table/tbody/tr[2]/td[2]/div[2]/div[2]/div[1]/table/tbody/tr[7]/td[2]/input[2]").click()
+    # driver.find_element(By.XPATH, "/html/body/form/div[3]/table/tbody/tr/td[2]/table/tbody/tr[2]/td[2]/div[2]/div[2]/div[1]/table/tbody/tr[7]/td[2]/input[2]").click()
 
-    # Upload file (directly send path to input[type=file])
     upload_input = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.XPATH, "//input[@type='file']"))
+        EC.presence_of_element_located((By.XPATH, "/html/body/div[1]/input"))
     )
-    upload_input.send_keys(settings.file_path)  # Send the file path directly
 
-    # Wait 5 seconds after upload
-    time.sleep(5)
+    # Tornar o input visível, se estiver escondido
+    driver.execute_script("arguments[0].style.display = 'block'; arguments[0].style.visibility = 'visible';",
+                          upload_input)
 
-    # # Click "Save"
+    upload_input.send_keys(settings.file_path)
+
+    # Depois clique no botão "Télécharger" para enviar
+    driver.find_element(By.ID, "tabs_tabHeader_fleUploadPhoto__Insert").click()
+
+    # # Click "Save" Do not un coment this for now. Ask Zenha
     # driver.find_element(By.XPATH, "/html/body/form/div[3]/table/tbody/tr/td[2]/table/tbody/tr[2]/td[1]/div[3]/fieldset/input[1]").click()
 
     # Done
