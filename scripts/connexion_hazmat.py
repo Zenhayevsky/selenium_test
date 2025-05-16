@@ -77,13 +77,13 @@ def run_script(driver):
         EC.presence_of_element_located((By.XPATH, "/html/body/div[1]/input"))
     )
 
-    # Tornar o input visível, se estiver escondido
+    # Make the input visible.
     driver.execute_script("arguments[0].style.display = 'block'; arguments[0].style.visibility = 'visible';",
                           upload_input)
 
     upload_input.send_keys(settings.file_path)
 
-    # Depois clique no botão "Télécharger" para enviar
+    # Click the "Télécharger" button to send
     driver.find_element(By.ID, "tabs_tabHeader_fleUploadPhoto__Insert").click()
 
     # # Click "Save" Do not un coment this for now. Ask Zenha
